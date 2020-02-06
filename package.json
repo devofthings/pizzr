@@ -7,10 +7,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd": "^3.26.8",
+    "localized-strings": "^0.2.4",
     "react": "^16.12.0",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1",
-    "localized-strings": "^0.2.4"
+    "react-scripts": "3.3.1"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
