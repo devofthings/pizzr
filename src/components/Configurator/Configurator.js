@@ -1,7 +1,7 @@
 import React from 'react';
-import { Radio, AutoComplete, InputNumber, Button } from 'antd';
+import { Radio, AutoComplete, InputNumber, Button, Row, Col } from 'antd';
 import LocalizedStrings from 'localized-strings';
-import s from './style.css';
+import './style.css';
 
 const strings = new LocalizedStrings({
     en:{
@@ -70,45 +70,54 @@ class Configurator extends React.Component {
 
     render() {
         return(
-            <div style={s.container}>
-                <Radio.Group onChange={this.onChangeRadio} value={this.state.radioValue} >
+            <div className="container">
+                <Radio.Group
+                    className="radioGroup"
+                    onChange={this.onChangeRadio}
+                    value={this.state.radioValue} >
                     <Radio value={1}>{`${strings.radio_circle}`}</Radio>
                     <Radio value={2}>{`${strings.radio_square}`}</Radio>
                 </Radio.Group>
-                {this.state.radioValue === 1
-                    ? (
-                        <AutoComplete
-                            dataSource={this.state.dataSourceCustom}
-                            placeholder={`${strings.placeholder}`}
-                            filterOption={(inputValue, option) =>
-                                option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-                            }
-                            onSelect={this.onSelectAverageSize}
-                            onSearch={this.onSearchAverageSize}
-                        />
-                    )
-                    : (
-                        <div>
-                            <InputNumber 
-                                min={this.state.width}
-                                defaultValue={20}
-                                onChange={this.onChangeWidth}
+                <div className="containerInput">
+                    {this.state.radioValue === 1
+                        ? (
+                            <AutoComplete
+                                className="averageSize"
+                                dataSource={this.state.dataSourceCustom}
+                                placeholder={`${strings.placeholder}`}
+                                filterOption={(inputValue, option) =>
+                                    option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                                }
+                                onSelect={this.onSelectAverageSize}
+                                onSearch={this.onSearchAverageSize}
                             />
-                            X
-                            <InputNumber 
-                                min={this.state.heigth}
-                                defaultValue={15}
-                                onChange={this.onChangeHeight}
-                            />
-                        </div>
-                    )
-                }
-                <InputNumber
-                    defaultValue={0.0}
-                    formatter={value => `€ ${value}`}
-                    onChange={this.onChangeMoney}
-                />
-                <Button>{`${strings.btn}`}</Button>
+                        )
+                        : (
+                            <div>
+                                <InputNumber
+                                    className="amountInput"                                   
+                                    min={this.state.width}
+                                    defaultValue={20}
+                                    onChange={this.onChangeWidth}
+                                />
+                                X
+                                <InputNumber
+                                    className="amountInput"                               
+                                    min={this.state.heigth}
+                                    defaultValue={15}
+                                    onChange={this.onChangeHeight}
+                                />
+                            </div>
+                        )
+                    }
+                    <InputNumber
+                        className="amountInput"
+                        defaultValue={0.0}
+                        formatter={value => `€ ${value}`}
+                        onChange={this.onChangeMoney}
+                    />
+                </div>
+                <Button className="button">{`${strings.btn}`}</Button>
             </div>
         )
     }
