@@ -35,6 +35,8 @@ canvas {
   min-width: 80%;
   max-width: 100%;
   position: relative;
+  background-color: #000000;
+  border-top: #ffffff solid;
 }
 
 .h1 {
@@ -59,6 +61,7 @@ canvas {
 
 .card {
   width: 100%;
+  border-radius: 0;
 }
 
 .form {
@@ -87,6 +90,7 @@ canvas {
   left: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+
 }
 
 .footer {
@@ -118,7 +122,11 @@ canvas {
   }
 
   .form {
-    margin-top: 125%;
+    margin-top: 120%;
+  }
+
+  .custom-control-label {
+    color: #ffffff;
   }
 
   .jumbotron {
@@ -129,10 +137,15 @@ canvas {
     position: relative;
   }
 
+  .progress {
+    background-color: #000000; /*Must be the same color as the jumbotron */
+    z-index: 1;
+  }
+
   .progress-bar{
     background-color: #333333;
     position: absolute;
-    bottom: 5.8vh;
+    bottom: 7vh;
     left: 0;
     z-index: 2;
   }
@@ -140,7 +153,7 @@ canvas {
   .progress-bar-bg {
     background-color: #111111;
     position: absolute;
-    bottom: 5.8vh;
+    bottom: 7vh;
     left: 0;
     z-index: 1;
   }

@@ -20,76 +20,91 @@
 <body id="particles-js">
     <main class="vertical-align">
         <div class="jumbotron">
-            <h1 class="h1">PIZZ<span class="red">R</span></h1>
+            <h1 class="h1">PIZZ<span class="red">R</span> 🍕</h1>
             <div class="card-container">
-                  <div class="card">
+                <div class="card">
                     <img src="assets/img/pizza.png" width=64 height=64 alt="...">
                     <div class="card-body">
                     </div>
-                  </div>
-                  <div class="card">
+                </div>
+                <div class="card">
+                    <img src="assets/img/pizza.png" width=64 height=64 alt="...">
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">€</span>
+                              <span class="input-group-text">X.Y</span>
+                              <span class="input-group-text">Ø</span>
+                              <span class="input-group-text">32cm</span>
+                              <span class="input-group-text">1cm&sup2;/€</span>
+                              
+                            </div>
+                            <span class="input-group-text">1.17€</span>
+                          </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/img/pizza.png" class="img-fluid" width=64 height=64 alt="...">
+                    <div class="card-body">
+                    </div>
+                </div>
+                <div class="card">
                     <img src="assets/img/pizza.png" width=64 height=64 alt="...">
                     <div class="card-body">
                     </div>
-                  </div>
-                  <div class="card">
+                </div>
+                <div class="card">
                     <img src="assets/img/pizza.png" width=64 height=64 alt="...">
                     <div class="card-body">
                     </div>
-                  </div>
-                  <div class="card">
-                    <img src="assets/img/pizza.png" width=64 height=64 alt="...">
-                    <div class="card-body">
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="assets/img/pizza.png" width=64 height=64 alt="...">
-                    <div class="card-body">
-                    </div>
-                  </div>
+                </div>
             </div>
-            
+
             <form class="form">
                 <div class="form-row">
                     <div class="col">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input">
                             <label class="custom-control-label" for="customRadioInline1">Round</label>
                         </div>
                     </div>
-                        <div class="col">
+                    <div class="col">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                                class="custom-control-input">
                             <label class="custom-control-label" for="customRadioInline2">Square</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-row">
-                        <div class="col">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Ø</span>
-                                </div>
-                                <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter" aria-describedby="basic-addon1">
-                              </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Ø</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter"
+                                aria-describedby="basic-addon1">
                         </div>
-                        <div class="col">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">€</span>
-                                </div>
-                                <input type="number" class="form-control" placeholder="Price" aria-label="Price" aria-describedby="basic-addon1">
-                              </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">€</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Price" aria-label="Price"
+                                aria-describedby="basic-addon1">
                         </div>
-                      </div>
+                    </div>
                 </div>
             </form>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
-                    aria-valuemax="100">0%</div>
+                    aria-valuemax="100">0%
+                </div>
                 <div class="progress-bar-bg" role="progressbar" style="width: 100%;" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100">0%</div>
+                    aria-valuemin="0" aria-valuemax="100">0%
+                </div>
             </div>
             <button type="button" class="btn btn-outline-success btn-lg btn-block btn-add">ADD+</button>
         </div>
@@ -104,9 +119,15 @@
     <!-- JS HERE-->
     <script src="./js/particles.min.js"></script>
     <script src="./js/particles-config.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
