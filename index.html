@@ -21,12 +21,7 @@
     <main class="vertical-align">
         <div class="jumbotron">
             <h1 class="h1">PIZZ<span class="red">R</span> 🍕</h1>
-            <div class="card-container">
-                <div class="card">
-                    <img src="assets/img/pizza.png" width=64 height=64 alt="...">
-                    <div class="card-body">
-                    </div>
-                </div>
+            <div class="card-container" id="pizza_container">
                 <div class="card">
                     <img src="assets/img/pizza.png" width=64 height=64 alt="...">
                     <div class="card-body">
@@ -43,57 +38,66 @@
                           </div>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="assets/img/pizza.png" class="img-fluid" width=64 height=64 alt="...">
-                    <div class="card-body">
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/img/pizza.png" width=64 height=64 alt="...">
-                    <div class="card-body">
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/img/pizza.png" width=64 height=64 alt="...">
-                    <div class="card-body">
-                    </div>
-                </div>
             </div>
 
             <form class="form">
                 <div class="form-row">
                     <div class="col">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline1">Round</label>
+                            <input type="radio" id="radio_round" name="customRadioInline1"
+                                class="custom-control-input" checked="true">
+                            <label class="custom-control-label" for="radio_round">Round</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                            <input type="radio" id="radio_square" name="customRadioInline1"
                                 class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline2">Square</label>
+                            <label class="custom-control-label" for="radio_square">Square</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Ø</span>
+
+                    <div id="diameter_div">
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Ø</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter"
+                                    aria-describedby="basic-addon1" id="input_diameter">
                             </div>
-                            <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter"
-                                aria-describedby="basic-addon1">
                         </div>
                     </div>
+                    <div id="square_div" style="display:none">
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Ø</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Length Side A" aria-label="Diameter"
+                                    aria-describedby="basic-addon1" id="input_side_a">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Ø</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Length Side B" aria-label="Diameter"
+                                    aria-describedby="basic-addon1" id="input_side_b">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">€</span>
                             </div>
                             <input type="number" class="form-control" placeholder="Price" aria-label="Price"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" id="price_input">
                         </div>
                     </div>
                 </div>
@@ -106,7 +110,7 @@
                     aria-valuemin="0" aria-valuemax="100">0%
                 </div>
             </div>
-            <button type="button" class="btn btn-outline-success btn-lg btn-block btn-add">ADD+</button>
+            <button type="button" id="btn_add" class="btn btn-outline-success btn-lg btn-block btn-add">ADD+</button>
         </div>
     </main>
 
@@ -120,14 +124,15 @@
     <script src="./js/particles.min.js"></script>
     <script src="./js/particles-config.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
