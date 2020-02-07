@@ -1,0 +1,137 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  display: flex;
+  justify-content: space-around;
+}
+
+canvas {
+  position: absolute;
+  z-index: -1000;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.jumbotron {
+  min-height: 80%;
+  max-height: 100%;
+  min-width: 80%;
+  max-width: 100%;
+  position: relative;
+}
+
+.form {
+  margin-top: 80%;
+}
+
+.progress-bar{
+  background-color: #333333;
+  position: absolute;
+  bottom: 6.9vh;
+  left: 0;
+  z-index: 2;
+}
+
+.progress-bar-bg {
+  background-color: #111111;
+  position: absolute;
+  bottom: 6.9vh;
+  left: 0;
+  z-index: 1;
+}
+
+.btn-add {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4vh; /* Set the fixed height of the footer here */
+  line-height: 4vh; /* Vertically center the text there */
+  background-color: #333333;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones */
+  .form {
+    margin-top: 100%;
+  }
+
+  .jumbotron {
+    min-height: 90%;
+    max-height: 90%;
+    min-width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .progress-bar{
+    background-color: #333333;
+    position: absolute;
+    bottom: 5.8vh;
+    left: 0;
+    z-index: 2;
+  }
+  
+  .progress-bar-bg {
+    background-color: #111111;
+    position: absolute;
+    bottom: 5.8vh;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  /* For super old and small mobile phones & iPhone SE */
+  .form {
+    margin-top: 100%;
+  }
+
+  .jumbotron {
+    min-height: 95%;
+    max-height: 95%;
+    min-width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .progress-bar{
+    background-color: #333333;
+    position: absolute;
+    bottom: 6.8vh;
+    left: 0;
+    z-index: 2;
+  }
+  
+  .progress-bar-bg {
+    background-color: #111111;
+    position: absolute;
+    bottom: 6.8vh;
+    left: 0;
+    z-index: 1;
+  }
+}
