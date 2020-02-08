@@ -11,6 +11,7 @@
     <title>pizzr</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Main CSS -->
@@ -20,19 +21,18 @@
 <body id="particles-js">
     <main class="vertical-align">
         <div class="jumbotron">
-            <h1 class="h1"><span class="text-success">PI</span>ZZ<span class="text-danger">R</span> 🍕</h1>
+            <h1 class="h1"><span class="text-success">PI</span>ZZ<span class="text-danger">R</span></h1>
             <div class="card-container" id="pizza_container">
-                <div class="card">
-                    <img src="assets/img/pizza-card3.jpg" class="card-image" alt="...">
-                    <div class="card-body">
-                        <div class="input-group mb-3 card-results">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">9.60€</span>
-                                <span class="input-group-text">Ø32cm</span>
-                            </div>
-                            <span class="input-group-text">1.17cm&sup2;/€</span>
-                        </div>
-                    </div>
+                <div id="manual">
+                    <h2 class="text-center text-light">How To:</h2>
+                    <h3 class="text-light">
+                        <small>
+                            Choose if you want to calculate a round or square Pizza
+                            then fill in the size and the price of it and finally
+                            click the ADD+ Button to add a pizza.
+                        </small>
+                    </h3>
+                    <h4 class="text-center text-light text-justify"><small>To delete a card click on the little x-icon.</small></h4>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@
                     aria-valuemin="0" aria-valuemax="100">0%
                 </div>
             </div>
-            <button type="button" id="btn_add" class="btn btn-outline-success btn-lg btn-block btn-add">ADD+</button>
+            <button type="button" id="btn_add" class="btn btn-outline-success btn-lg btn-block btn-add disabled">ADD+</button>
         </div>
     </main>
 

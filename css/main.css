@@ -105,6 +105,14 @@ canvas {
     padding-top: 5%;
   }
 
+  #manual {
+    font-family: 'Sriracha', cursive;
+    text-align: left;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 20%;
+  }
+
   .card-container {
     position: absolute;
     left: 0;
@@ -116,6 +124,23 @@ canvas {
 
   .card {
     width: 100%;
+  }
+
+  #close-button {
+    position: absolute;
+    right: 0;
+    background-color: #000000;
+    margin-right: 1%;
+    margin-top: 1%;
+    z-index: 1000;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 2vh;
+  }
+
+  .close-button-x {
+    margin-left: 35%;
+    font-size: 2.5vh;
   }
 
   .card-image {

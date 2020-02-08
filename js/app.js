@@ -1,3 +1,6 @@
+// GLOBAL VARIABLES
+
+
 // HELPER FUNCTIONS
 // get random int from 1 to max input
 const getRandomInt = (max) => 1 + (Math.floor(Math.random() * Math.floor(max)));
@@ -6,8 +9,19 @@ const getPizzaImageString = () => `assets/img/pizza-card${getRandomInt(5)}.jpg`.
 
 
 // MAIN FUNCTIONS
+// switch input-form on radio selection
+$("#radio_square").click(() => {
+    $("#square_div").show()
+    $("#diameter_div").hide()
+});
+
+$("#radio_round").click(() => {
+    $("#square_div").hide()
+    $("#diameter_div").show()
+});
+
 // create new cards
-$('#btn_add').click(function () {
+$('#btn_add').click(() => {
 
     const price = $('#price_input').val();
     console.log("price:", price);
@@ -26,6 +40,9 @@ $('#btn_add').click(function () {
 
         $('#pizza_container').append(`
             <div class="card">
+                <div id="close-button" onClick="deleteCard()">
+                    <span class="text-center text-light font-weight-bold close-button-x">x</span>
+                </div>
                 <img src=${getPizzaImageString()} class="card-image" alt="...">
                 <div class="card-body">
                     <div class="input-group mb-3 card-results">
@@ -71,14 +88,5 @@ $('#btn_add').click(function () {
     }
 });
 
-
-
-$("#radio_square").click(() => {
-    $("#square_div").show()
-    $("#diameter_div").hide()
-});
-
-$("#radio_round").click(() => {
-    $("#square_div").hide()
-    $("#diameter_div").show()
-});
+//delete a card
+const deleteCard = () => $('div #close-button').click((e) => $(e.target).remove());
