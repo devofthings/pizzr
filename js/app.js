@@ -1,4 +1,12 @@
-// function add_button(){
+// HELPER FUNCTIONS
+// get random int from 1 to max input
+const getRandomInt = (max) => 1 + (Math.floor(Math.random() * Math.floor(max)));
+// create a picture string
+const getPizzaImageString = () => `assets/img/pizza-card${getRandomInt(5)}.jpg`.toString()
+
+
+// MAIN FUNCTIONS
+// create new cards
 $('#btn_add').click(function () {
 
     const price = $('#price_input').val();
@@ -18,7 +26,7 @@ $('#btn_add').click(function () {
 
         $('#pizza_container').append(`
             <div class="card">
-                <img src="assets/img/pizza.png" class="card-image" alt="...">
+                <img src=${getPizzaImageString()} class="card-image" alt="...">
                 <div class="card-body">
                     <div class="input-group mb-3 card-results">
                         <div class="input-group-prepend">
@@ -47,7 +55,7 @@ $('#btn_add').click(function () {
 
         $('#pizza_container').append(`
             <div class="card">
-                <img src="assets/img/pizza.png" class="card-image" alt="...">
+                <img src=${getPizzaImageString()} class="card-image" alt="...">
                 <div class="card-body">
                     <div class="input-group mb-3 card-results">
                         <div class="input-group-prepend">
