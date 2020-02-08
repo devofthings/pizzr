@@ -1,0 +1,22 @@
+{
+    "short_name": "Pizzr",
+    "name": "Pizzr - Pizza Calculator",
+    "icons": [
+        {
+            "src": "/assets/favicon/196.png",
+            "type": "image/png",
+            "sizes": "196x196"
+        },
+        {
+            "src": "/assets/favicon/512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#3367D6",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "theme_color": "#DC3545"
+}
