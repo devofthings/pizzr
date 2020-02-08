@@ -47,10 +47,6 @@ canvas {
   color: #ffffff;
 }
 
-.red {
-  color: red;
-}
-
 .card-container {
   position: absolute;
   left: 0;
@@ -71,7 +67,7 @@ canvas {
 .progress-bar{
   background-color: #333333;
   position: absolute;
-  bottom: 6.9vh;
+  bottom: 6.8vh;
   left: 0;
   z-index: 2;
 }
@@ -79,7 +75,7 @@ canvas {
 .progress-bar-bg {
   background-color: #111111;
   position: absolute;
-  bottom: 6.9vh;
+  bottom: 6.8vh;
   left: 0;
   z-index: 1;
 }
@@ -115,23 +111,58 @@ canvas {
     height: 68%;
     width: 100%;
     overflow-y:auto;
+    overflow-x: hidden;
   }
 
   .card {
     width: 100%;
   }
 
+  .card-image {
+    width: 100vw;
+    height: 9vh;
+  }
+
+  .card-body {
+    width: 100vw;
+    height: 4vh;
+  }
+
+  .card-results {
+    margin-top: -4.6%;
+    margin-left: -6%;
+  }
+
   .form {
-    margin-top: 120%;
+    margin-top: 130%;
   }
 
   .custom-control-label {
     color: #ffffff;
+    margin-left: 70%;
+    margin-top: -10%;
+  }
+
+  .form-input {
+    margin-bottom: 2%;
+    margin-left: -4%;
+  }
+
+  .diameter {
+    margin-top: -2%;
+    margin-bottom: 2%;
+  }
+  
+  .price {
+    max-width: 95%;
+    margin-left: 2.8%;
+    margin-top: -4%;
+    margin-bottom: 2%;
   }
 
   .jumbotron {
-    min-height: 90%;
-    max-height: 90%;
+    min-height: auto;
+    max-height: auto;
     min-width: 100%;
     max-width: 100%;
     position: relative;
@@ -145,7 +176,7 @@ canvas {
   .progress-bar{
     background-color: #333333;
     position: absolute;
-    bottom: 7vh;
+    bottom: 6.8vh;
     left: 0;
     z-index: 2;
   }
@@ -153,7 +184,7 @@ canvas {
   .progress-bar-bg {
     background-color: #111111;
     position: absolute;
-    bottom: 7vh;
+    bottom: 6.8vh;
     left: 0;
     z-index: 1;
   }
