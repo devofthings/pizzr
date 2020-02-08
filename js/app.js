@@ -1,11 +1,37 @@
-// GLOBAL VARIABLES
-
-
 // HELPER FUNCTIONS
 // get random int from 1 to max input
 const getRandomInt = (max) => 1 + (Math.floor(Math.random() * Math.floor(max)));
 // create a picture string
-const getPizzaImageString = () => `assets/img/pizza-card${getRandomInt(5)}.jpg`.toString()
+const getPizzaImageString = () => `assets/img/pizza-card${getRandomInt(5)}.jpg`.toString();
+// animate css helpers
+const animateCSSLastElement = (element, animationName, callback) => {
+    const nodes = document.querySelectorAll(element)
+    const last = nodes[nodes.length-1]
+    last.classList.add('animated', animationName)
+
+    handleAnimationEnd = () => {
+        last.classList.remove('animated', animationName)
+        last.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    last.addEventListener('animationend', handleAnimationEnd)
+}
+
+const animateCSSCurrentElement = (element, animationName, callback) => {
+    const node = element
+    node.classList.add('animated', animationName)
+
+    handleAnimationEnd = () => {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
 
 
 // MAIN FUNCTIONS
@@ -25,6 +51,7 @@ $('#btn_add').click(() => {
 
     const price = $('#price_input').val();
     console.log("price:", price);
+    $('#manual').hide()
 
     if ($('#radio_round').is(':checked')) {
         // round
@@ -40,7 +67,7 @@ $('#btn_add').click(() => {
 
         $('#pizza_container').append(`
             <div class="card">
-                <div id="close-button" onClick="deleteCard()">
+                <div id="close-button" onClick="deleteCard($(this))">
                     <span class="text-center text-light font-weight-bold close-button-x">x</span>
                 </div>
                 <img src=${getPizzaImageString()} class="card-image" alt="...">
@@ -56,6 +83,7 @@ $('#btn_add').click(() => {
                 </div>
             </div>`
         );
+        animateCSSLastElement('.card', 'fadeInLeft')
 
     } else if ($('#radio_square').is(':checked')) {
         // square
@@ -88,5 +116,12 @@ $('#btn_add').click(() => {
     }
 });
 
-//delete a card
-const deleteCard = () => $('div #close-button').click((e) => $(e.target).remove());
+//delete card
+const deleteCard = (card) => {
+    animateCSSCurrentElement(card.parent()[0], 'zoomOut', () =>
+    {
+        card.parent().remove();
+        $('.card').length === 0?$('#manual').show():null
+    }
+    )}
+    
