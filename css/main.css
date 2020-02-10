@@ -273,3 +273,7 @@ canvas {
     z-index: 1;
   }
 }
+
+.best-value {
+  background-color: lightgreen;
+}
