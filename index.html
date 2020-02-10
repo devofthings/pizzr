@@ -14,8 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <!-- ANIMATE.CSS-->
-    <link rel="stylesheet" href="./css/animate.min.css"> 
     <!-- Main CSS -->
     <link href="./css/main.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
@@ -39,7 +37,7 @@
                 </div>
             </div>
 
-            <form class="form" id="add_form">
+            <form class="form">
                 <div class="form-row">
                     <div class="col">
                         <div class="custom-control custom-radio custom-control-inline">
@@ -128,6 +126,11 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/service-worker.js');
+        }
+    </script>
 </body>
 
 </html>
