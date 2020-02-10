@@ -32,6 +32,34 @@ const animateCSSCurrentElement = (element, animationName, callback) => {
 
     node.addEventListener('animationend', handleAnimationEnd)
 }
+// add percentage to the progressbar
+const addProgress = () => {
+    let diameter = $('#input_diameter').val()
+    let price = $('#price_input').val()
+    let progress = $('#progress');
+    console.log(diameter.length)
+    console.log(price.length)
+    if(diameter.length !== 0 | price.length !== 0) {
+        progress.html("50%")
+        progress.css("width", "50%")
+    }
+    if(diameter.length !== 0 & price.length !== 0) {
+        progress.html("100%")
+        progress.css("width", "100%")
+        $('#btn_add').removeClass('disabled');
+    }
+    if(diameter.length == 0 & price.length == 0) {
+        progress.html("0%")
+        progress.css("width", "10%")
+    }
+}
+
+// clear input values
+const getPurged = () => {
+    $('#input_diameter').val(null)
+    $('#price_input').val(null)
+    $('#btn_add').addClass('disabled');
+} 
 
 
 // MAIN FUNCTIONS
@@ -46,15 +74,17 @@ $("#radio_round").click(() => {
     $("#diameter_div").show()
 });
 
+// check for input in the input fields
+$('#input_diameter').keyup(() => {
+    addProgress()
+})
+
+$('#price_input').keyup(() => {
+    addProgress()
+})
 // create new cards
 $('#btn_add').click(() => {
-
-    let formInvalid = true;
-    if ($('#input_diameter').val().length !== 0 && $('#price_input').val().length !== 0){
-        $('#btn_add').removeClass('disabled');
-        formInvalid = false
-    }
-    else {
+    if ($('#input_diameter').val().length === 0 || $('#price_input').val().length === 0){
         alert('One or Two fields are empty. Please fill up all fields');
         return null;
     }
@@ -124,6 +154,7 @@ $('#btn_add').click(() => {
             </div>`
         );
     }
+    getPurged()
 });
 
 //delete card
