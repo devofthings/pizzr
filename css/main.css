@@ -163,6 +163,12 @@ canvas {
     margin-left: -6%;
   }
 
+  .input-group-card {
+    background-color: #ffffff;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
   .form {
     margin-top: 130%;
   }

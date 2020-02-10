@@ -49,6 +49,16 @@ $("#radio_round").click(() => {
 // create new cards
 $('#btn_add').click(() => {
 
+    let formInvalid = true;
+    if ($('#input_diameter').val().length !== 0 && $('#price_input').val().length !== 0){
+        $('#btn_add').removeClass('disabled');
+        formInvalid = false
+    }
+    else {
+        alert('One or Two fields are empty. Please fill up all fields');
+        return null;
+    }
+
     const price = $('#price_input').val();
     console.log("price:", price);
     $('#manual').hide()
@@ -58,7 +68,7 @@ $('#btn_add').click(() => {
         console.log("round pizza");
         const diameter = $('#input_diameter').val();
         console.log("diameter:", diameter);
-        const pizza_area = 3.14159 * (diameter / 2) ** 2;
+        const pizza_area = (3.14159 * (diameter / 2) ** 2).toFixed(2);
         console.log("total area pizza:", pizza_area, "cm²");
         let price_per_cm2 = price / pizza_area;
         console.log("price per cm²:", price_per_cm2)
@@ -74,10 +84,10 @@ $('#btn_add').click(() => {
                 <div class="card-body">
                     <div class="input-group mb-3 card-results">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">${price}€</span>
-                            <span class="input-group-text">Ø${diameter}cm</span>
-                            <span class="input-group-text">${pizza_area}cm&sup2;</span>
-                            <span class="input-group-text">${cent_per_cm2}cent/cm&sup2;</span>
+                            <span class="input-group-text input-group-card">${price}€</span>
+                            <span class="input-group-text input-group-card">Ø${diameter}cm</span>
+                            <span class="input-group-text input-group-card">${pizza_area}cm&sup2;</span>
+                            <span class="input-group-text input-group-card">${cent_per_cm2}cent/cm&sup2;</span>
                         </div>
                     </div>
                 </div>
