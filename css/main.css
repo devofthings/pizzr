@@ -19,7 +19,7 @@ canvas {
   z-index: -1000;
 }
 
-.particles-js {
+#particles-js {
   width: 100%;
   height: 100%;
   background-color: #000000;
@@ -153,6 +153,7 @@ canvas {
 
 /* NORMAL PHONES LIKE A iPHONE 6 / PIXEL 2 */
 @media only screen and (max-width: 600px) {
+
   .vertical-align {
     display: flex;
     flex-direction: column;
@@ -163,6 +164,7 @@ canvas {
     width: 100%;
     height: 100%;
     margin-left: 0;
+    background-color: rgba(0,0,0,0.9);
   }
 
   .card-container {
