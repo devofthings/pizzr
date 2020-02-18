@@ -198,15 +198,10 @@ canvas {
   }
 }
 
-/* SMALL PHONES LIKE AN iPHONE SE */
-@media only screen and (max-width: 320px) {
+/* REGULAR PHONES */
+@media only screen and (max-width: 360px) {
   .card-container {
-    height: 62%;
-  }
-
-  .card-results {
-    margin-top: -7%;
-    margin-left: -9%;
+    height: 67%;
   }
 
   .input-group-text {
@@ -230,4 +225,17 @@ canvas {
     width: 97%;
     margin-left: 1.5%;
   }
+}
+
+/* SMALL PHONES LIKE AN iPHONE SE */
+@media only screen and (max-width: 320px) {
+  .card-container {
+    height: 62%;
+  }
+
+  .card-results {
+    margin-top: -7%;
+    margin-left: -9%;
+  }
+
 }
