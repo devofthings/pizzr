@@ -34,20 +34,20 @@ const animateCSSCurrentElement = (element, animationName, callback) => {
 }
 // add percentage to the progressbar
 const addProgress = () => {
-    let diameter = $('#input_diameter').val()
-    let side_a = $('#input_side_a').val()
-    let side_b = $('#input_side_b').val()
-    let price = $('#price_input').val()
+    let diameter = $('#input-diameter').val()
+    let side_a = $('#input-side-a').val()
+    let side_b = $('#input-side-b').val()
+    let price = $('#price-input').val()
     let progress = $('#progress');
     let total_percent_progress = 0;
-    if ($('#radio_round').is(':checked')) {
+    if ($('#radio-round').is(':checked')) {
         if(diameter.length !== 0) {
             total_percent_progress += 50;
         }
         if(price.length !== 0) {
             total_percent_progress += 50;
         }
-    }else if($('#radio_square').is(':checked')) {
+    }else if($('#radio-square').is(':checked')) {
         if(side_a.length !== 0) {
             total_percent_progress += 33;
         }
@@ -70,10 +70,10 @@ const addProgress = () => {
 
 // clear input values
 const getPurged = () => {
-    $('#input_diameter').val(null)
-    $('#price_input').val(null)
-    $('#input_side_a').val(null)
-    $('#input_side_b').val(null)
+    $('#input-diameter').val(null)
+    $('#price-input').val(null)
+    $('#input-side-a').val(null)
+    $('#input-side-b').val(null)
     $('#btn_add').addClass('disabled');
 } 
 
@@ -87,39 +87,39 @@ const highlight_best_value = () => {
             best_price = this;
         }
     })
-
-    best_price.parentNode.classList.add("best-value");
+    console.log("beste value",all_price_per_cm2[0])
+    $(best_price.parentNode).addClass("best-value");
 }
 
 
 
 // MAIN FUNCTIONS
 // switch input-form on radio selection
-$("#radio_square").click(() => {
-    $("#diameter_div").hide();
-    $("#square_div").show();
+$("#radio-square").click(() => {
+    $("#diameter-div").hide();
+    $("#square-div").show();
     getPurged();
     addProgress();
 });
 
-$("#radio_round").click(() => {
-    $("#square_div").hide();
-    $("#diameter_div").show();
+$("#radio-round").click(() => {
+    $("#square-div").hide();
+    $("#diameter-div").show();
     getPurged();
     addProgress();
 });
 
 // check for input in the input fields
-$('#input_side_a').keyup(() => {
+$('#input-side-a').keyup(() => {
     addProgress()
 })
-$('#input_side_b').keyup(() => {
+$('#input-side-b').keyup(() => {
     addProgress()
 })
-$('#input_diameter').keyup(() => {
+$('#input-diameter').keyup(() => {
     addProgress()
 })
-$('#price_input').keyup(() => {
+$('#price-input').keyup(() => {
     addProgress()
 })
 
@@ -131,14 +131,14 @@ $('#btn_add').click(() => {
         return null;
     }
 
-    const price = $('#price_input').val();
+    const price = $('#price-input').val();
     console.log("price:", price);
     $('#manual').hide()
 
-    if ($('#radio_round').is(':checked')) {
+    if ($('#radio-round').is(':checked')) {
         // round
         console.log("round pizza");
-        const diameter = $('#input_diameter').val();
+        const diameter = $('#input-diameter').val();
         console.log("diameter:", diameter);
         const pizza_area = (3.14159 * (diameter / 2) ** 2).toFixed(2);
         console.log("total area pizza:", pizza_area, "cm²");
@@ -147,14 +147,14 @@ $('#btn_add').click(() => {
         cent_per_cm2 = (price_per_cm2 * 100).toFixed(2)
         price_per_cm2 = price_per_cm2.toFixed(4)
 
-        $('#pizza_container').append(`
+        $('#pizza-cards-container').append(`
             <div class="card">
                 <div id="close-button" onClick="deleteCard($(this))">
                     <span class="text-center text-light font-weight-bold close-button-x">x</span>
                 </div>
                 <img src=${getPizzaImageString()} class="card-image" alt="...">
                 <div class="card-body">
-                    <div class="input-group mb-3 card-results">
+                    <div class="input-group card-results">
                         <div class="input-group-prepend">
                             <span class="input-group-text input-group-card">${price}€</span>
                             <span class="input-group-text input-group-card">Ø${diameter}cm</span>
@@ -167,11 +167,11 @@ $('#btn_add').click(() => {
         );
         animateCSSLastElement('.card', 'fadeInLeft')
 
-    } else if ($('#radio_square').is(':checked')) {
+    } else if ($('#radio-square').is(':checked')) {
         // square
         console.log("square pizza");
-        const side_a = $('#input_side_a').val();
-        const side_b = $('#input_side_b').val();
+        const side_a = $('#input-side-a').val();
+        const side_b = $('#input-side-b').val();
         console.log("size:", side_a, "x", side_b);
         const pizza_area = side_a * side_b;
         console.log("total area pizza:", pizza_area, "cm²");
@@ -180,7 +180,7 @@ $('#btn_add').click(() => {
         cent_per_cm2 = (price_per_cm2 * 100).toFixed(2)
         price_per_cm2 = price_per_cm2.toFixed(4)
 
-        $('#pizza_container').append(`
+        $('#pizza-cards-container').append(`
             <div class="card">
                 <div id="close-button" onClick="deleteCard($(this))">
                     <span class="text-center text-light font-weight-bold close-button-x">x</span>

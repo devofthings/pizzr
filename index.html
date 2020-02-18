@@ -21,69 +21,66 @@
     <link rel="manifest" href="/manifest.json">
 </head>
 
-<body id="particles-js">
+<body class="particles-js">
     <main class="vertical-align">
         <div class="jumbotron">
-            <h1 class="h1"><span class="text-success">PI</span>ZZ<span class="text-danger">R</span></h1>
-            <div class="card-container" id="pizza_container">
-                <div id="manual">
+            <h1 class="headline">
+                <span class="text-success">PI</span><span class="text-light">ZZ</span><span class="text-danger">R</span>
+            </h1>
+            <div class="card-container" id="pizza-cards-container">
+                <div class="manual" id="manual">
                     <h2 class="text-center text-light">How To:</h2>
-                    <h3 class="text-light">
-                        <small>
-                            Choose if you want to calculate a round or square Pizza
-                            then fill in the size and the price of it and finally
-                            click the ADD+ Button to add a pizza.
-                        </small>
-                    </h3>
-                    <h4 class="text-center text-light text-justify"><small>To delete a card click on the little x-icon.</small></h4>
+                    <p class="text-light">
+                        Choose if you want to calculate a round or square Pizza
+                        then fill in the size and the price of it and finally
+                        click the ADD+ Button to add a pizza. The pizza with the 
+                        best price will be highlighted.
+                    </p>
+                    <p class="text-light">
+                        To delete a card tap or click on the little x.
+                    </p>
                 </div>
             </div>
 
-            <form class="form" id="add_form">
-                <div class="form-row">
-                    <div class="col">
+            <form class="form" id="add-form">
+                <div class="form-row radio-buttons">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="radio_round" name="customRadioInline1" class="custom-control-input"
+                            <input type="radio" id="radio-round" name="customRadioInline1" class="custom-control-input"
                                 checked="true">
-                            <label class="custom-control-label" for="radio_round">Round</label>
+                            <label class="custom-control-label" for="radio-round">Round</label>
                         </div>
-                    </div>
-                    <div class="col">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="radio_square" name="customRadioInline1"
+                            <input type="radio" id="radio-square" name="customRadioInline1"
                                 class="custom-control-input">
-                            <label class="custom-control-label" for="radio_square">Square</label>
+                            <label class="custom-control-label" for="radio-square">Square</label>
                         </div>
-                    </div>
                 </div>
                 <div class="form-row form-input">
-                    <div id="diameter_div">
-                        <div class="col">
-                            <div class="input-group mb-3 diameter">
+                    <div class="diameter-div" id="diameter-div">
+                        
+                            <div class="input-group diameter">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Ø</span>
                                 </div>
                                 <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter"
-                                    aria-describedby="basic-addon1" id="input_diameter">
+                                    aria-describedby="basic-addon1" id="input-diameter">
                             </div>
-                        </div>
+                        
 
                     </div>
-                    <div id="square_div" style="display:none">
-                        <div class="col">
-                            <div class="input-group mb-3">
+                    <div id="square-div" style="display:none">
+                            <div class="input-group square">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">cm</span>
-                                    <input type="number" class="form-control" placeholder="Length Side A"
-                                        aria-label="Diameter" aria-describedby="basic-addon1" id="input_side_a">
+                                    <input type="number" class="form-control" placeholder="Length A"
+                                        aria-label="Diameter" aria-describedby="basic-addon1" id="input-side-a">
 
                                     <span class="input-group-text" id="basic-addon1">cm</span>
-                                    <input type="number" class="form-control" placeholder="Length Side B"
-                                        aria-label="Diameter" aria-describedby="basic-addon1" id="input_side_b">
+                                    <input type="number" class="form-control" placeholder="Length B"
+                                        aria-label="Diameter" aria-describedby="basic-addon1" id="input-side-b">
 
                                 </div>
                             </div>
-                        </div>
                     </div>
 
                     <div class="col">
@@ -92,7 +89,7 @@
                                 <span class="input-group-text" id="basic-addon1">€</span>
                             </div>
                             <input type="number" class="form-control" placeholder="Price" aria-label="Price"
-                                aria-describedby="basic-addon1" id="price_input">
+                                aria-describedby="basic-addon1" id="price-input">
                         </div>
                     </div>
                 </div>
@@ -100,9 +97,6 @@
             <div class="progress">
                 <div class="progress-bar" id="progress" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
                     aria-valuemax="100">0%
-                </div>
-                <div class="progress-bar-bg" role="progressbar" style="width: 100%;" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100">0%
                 </div>
             </div>
             <button type="button" id="btn_add" class="btn btn-outline-success btn-lg btn-block btn-add disabled">ADD+</button>
@@ -116,7 +110,7 @@
     </footer>
 
     <!-- JS HERE-->
-    <script src="./js/particles.min.js"></script>
+    <!--<script src="./js/particles.min.js"></script>-->
     <script src="./js/particles-config.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

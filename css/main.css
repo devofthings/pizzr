@@ -1,3 +1,8 @@
+/*
+THIS CSS FILE GOES FROM THE TOP OF index.html TO THE BOTTOM.
+ONLY USE CLASSES .class{} OR COMPONENTS html{} FOR STYLE. IDS ARE FOR LOGIC STUFF!
+*/
+
 html {
   position: relative;
   min-height: 100%;
@@ -5,6 +10,7 @@ html {
 
 body{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -13,7 +19,7 @@ canvas {
   z-index: -1000;
 }
 
-#particles-js {
+.particles-js {
   width: 100%;
   height: 100%;
   background-color: #000000;
@@ -25,68 +31,114 @@ canvas {
 .vertical-align {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
 }
 
 .jumbotron {
-  min-height: 80%;
-  max-height: 100%;
-  min-width: 80%;
-  max-width: 100%;
-  position: relative;
+  width: 90%;
+  height: 85%;
+  margin-left: 5%;
   background-color: #000000;
   border-top: #ffffff solid;
 }
 
-.h1 {
-  margin-top: -10%;
-  text-align: center;
+.headline {
   font-family: 'Monoton', cursive;
-  font-size: 8vh;
-  color: #ffffff;
+  font-size: 5vh;
+  text-align: center;
+  margin-top: -5%;
 }
 
 .card-container {
-  position: absolute;
-  left: 0;
-  height: 58%;
   width: 100%;
+  height: 80%;
   overflow-y:auto;
+  overflow-x: hidden;
+}
+
+.manual {
+  font-family: 'Sriracha', cursive;
+  hyphens: manual; 
+  text-align: justify;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .card {
+  width: 93%;
+  margin-left: 4%;
+}
+
+#close-button {
+  position: absolute;
+  right: 0;
+  background-color: #000000;
+  margin-right: 1%;
+  margin-top: 1%;
+  z-index: 10;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 2vh;
+}
+
+.close-button-x {
+  margin-left: 35%;
+  font-size: 2.5vh;
+}
+
+.card-image {
+  min-width: 34.1vw;
+  max-width: 53vw;
+  height: 8vh;
+}
+
+.card-body {
+  width: 40vw;
+  height: 5vh;
+}
+
+.card-results {
+  margin-top: -5%;
+  margin-left: -5%;
+}
+
+.best-value {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.input-group-card {
+  background-color: #ffffff;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.radio-buttons {
+  margin-left: 30%;
+  padding-bottom: 1%;
+}
+
+.custom-control-label {
+  color: #ffffff;
+  padding-right: 50%;
+}
+
+.diameter {
+  margin-left: 2%;
+}
+
+.square {
+  width: 97%;
+  margin-left: 1.5%;
+}
+
+.price {
   width: 100%;
-  border-radius: 0;
 }
 
-.form {
-  margin-top: 85%;
-}
-
-.progress-bar{
-  background-color: #333333;
-  position: absolute;
-  bottom: 6.8vh;
-  left: 0;
-  z-index: 2;
-}
-
-.progress-bar-bg {
-  background-color: #111111;
-  position: absolute;
-  bottom: 6.8vh;
-  left: 0;
-  z-index: 1;
-}
-
-.btn-add {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-
+.animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
 }
 
 .footer {
@@ -98,182 +150,82 @@ canvas {
   background-color: #333333;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones */
-  .h1 {
-    font-size: 4vh;
-    padding-top: 5%;
+
+/* NORMAL PHONES LIKE A iPHONE 6 / PIXEL 2 */
+@media only screen and (max-width: 600px) {
+  .vertical-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
-  .animated {
-    animation-duration: 0.8s;
-    animation-fill-mode: both;
-  }
-
-  #manual {
-    font-family: 'Sriracha', cursive;
-    text-align: left;
-    width: 85%;
-    margin-left: 7.5%;
-    margin-top: 20%;
+  .jumbotron {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
   }
 
   .card-container {
-    position: absolute;
-    left: 0;
-    height: 68%;
-    width: 100%;
-    overflow-y:auto;
-    overflow-x: hidden;
+    height: 70%;
   }
 
   .card {
     width: 100%;
-  }
-
-  #close-button {
-    position: absolute;
-    right: 0;
-    background-color: #000000;
-    margin-right: 1%;
-    margin-top: 1%;
-    z-index: 1000;
-    width: 4vh;
-    height: 4vh;
-    border-radius: 2vh;
-  }
-
-  .close-button-x {
-    margin-left: 35%;
-    font-size: 2.5vh;
+    margin-left: 0;
   }
 
   .card-image {
-    width: 100vw;
-    height: 9vh;
+    min-width: 92vw;
+    height: 8vh;
   }
-
+  
   .card-body {
-    width: 100vw;
-    height: 4vh;
+    width: 90vw;
+    height: 5vh;
   }
-
+  
   .card-results {
-    margin-top: -4.6%;
-    margin-left: -6%;
+    margin-top: -5.5%;
+    margin-left: -7%;
   }
-
+  
   .input-group-card {
     background-color: #ffffff;
     border-top: 0;
     border-bottom: 0;
   }
-
-  .form {
-    margin-top: 130%;
-  }
-
-  .custom-control-label {
-    color: #ffffff;
-    margin-left: 70%;
-    margin-top: -10%;
-  }
-
-  .form-input {
-    margin-bottom: 2%;
-    margin-left: -4%;
-  }
-
-  .diameter {
-    margin-top: -2%;
-    margin-bottom: 2%;
-  }
-  
-  .price {
-    max-width: 95%;
-    margin-left: 2.8%;
-    margin-top: -4%;
-    margin-bottom: 2%;
-  }
-
-  .jumbotron {
-    min-height: auto;
-    max-height: auto;
-    min-width: 100%;
-    max-width: 100%;
-    position: relative;
-  }
-
-  .progress {
-    background-color: #000000; /*Must be the same color as the jumbotron */
-    z-index: 1;
-  }
-
-  .progress-bar{
-    background-color: #333333;
-    position: absolute;
-    bottom: 6.8vh;
-    left: 0;
-    z-index: 2;
-  }
-  
-  .progress-bar-bg {
-    background-color: #111111;
-    position: absolute;
-    bottom: 6.8vh;
-    left: 0;
-    z-index: 1;
-  }
 }
 
+/* SMALL PHONES LIKE AN iPHONE SE */
 @media only screen and (max-width: 320px) {
-  /* For super old and small mobile phones & iPhone SE */
-  .h1 {
-    font-size: 4vh;
-    padding-top: 5%;
-  }
-
   .card-container {
-    position: absolute;
-    left: 0;
     height: 62%;
-    width: 100%;
-    overflow-y:auto;
   }
 
-  .card {
-    width: 100%;
+  .card-results {
+    margin-top: -7%;
+    margin-left: -9%;
   }
 
-  .form {
-    margin-top: 125%;
+  .input-group-text {
+    font-size: small;
   }
 
-  .jumbotron {
-    min-height: 95%;
-    max-height: 95%;
-    min-width: 100%;
-    max-width: 100%;
-    position: relative;
+  ::placeholder{
+    font-size: small;
   }
 
-  .progress-bar{
-    background-color: #333333;
-    position: absolute;
-    bottom: 6.8vh;
-    left: 0;
-    z-index: 2;
+  .radio-buttons {
+    display: inline;
+    margin-left: 20%;
+  }
+
+  .diameter-div {
+    width: 50%;
   }
   
-  .progress-bar-bg {
-    background-color: #111111;
-    position: absolute;
-    bottom: 6.8vh;
-    left: 0;
-    z-index: 1;
+  .square {
+    width: 97%;
+    margin-left: 1.5%;
   }
-}
-
-.best-value {
-  background-color: lightgreen;
 }
