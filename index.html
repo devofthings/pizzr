@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="pizzr">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.png" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon/favicon.png" type="image/x-icon">
+    <title>pizzr</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- ANIMATE.CSS-->
+    <link rel="stylesheet" href="./css/animate.min.css"> 
+    <!-- Main CSS -->
+    <link href="./css/main.css" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body id="particles-js">
+    <main class="vertical-align">
+        <div class="jumbotron">
+            <h1 class="headline">
+                <span class="text-success">PI</span><span class="text-light">ZZ</span><span class="text-danger">R</span>
+            </h1>
+            <div class="card-container" id="pizza-cards-container">
+                <div class="manual" id="manual">
+                    <h2 class="text-center text-light">How To:</h2>
+                    <p class="text-light">
+                        Choose if you want to calculate a round or square Pizza
+                        then fill in the size and the price of it and finally
+                        click the ADD+ Button to add a pizza. The pizza with the 
+                        best price will be highlighted.
+                    </p>
+                    <p class="text-light">
+                        To delete a card tap or click on the little x.
+                    </p>
+                </div>
+            </div>
+
+            <form class="form" id="add-form">
+                <div class="form-row radio-buttons">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="radio-round" name="customRadioInline1" class="custom-control-input"
+                                checked="true">
+                            <label class="custom-control-label" for="radio-round">Round</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="radio-square" name="customRadioInline1"
+                                class="custom-control-input">
+                            <label class="custom-control-label" for="radio-square">Square</label>
+                        </div>
+                </div>
+                <div class="form-row form-input">
+                    <div class="diameter-div" id="diameter-div">
+                        
+                            <div class="input-group diameter">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Ø</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter"
+                                    aria-describedby="basic-addon1" id="input-diameter">
+                            </div>
+                        
+
+                    </div>
+                    <div id="square-div" style="display:none">
+                            <div class="input-group square">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">cm</span>
+                                    <input type="number" class="form-control" placeholder="Length A"
+                                        aria-label="Diameter" aria-describedby="basic-addon1" id="input-side-a">
+
+                                    <span class="input-group-text" id="basic-addon1">cm</span>
+                                    <input type="number" class="form-control" placeholder="Length B"
+                                        aria-label="Diameter" aria-describedby="basic-addon1" id="input-side-b">
+
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group price">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">€</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Price" aria-label="Price"
+                                aria-describedby="basic-addon1" id="price-input">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="progress">
+                <div class="progress-bar" id="progress" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">0%
+                </div>
+            </div>
+            <button type="button" id="btn_add" class="btn btn-outline-success btn-lg btn-block btn-add disabled">ADD+</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">pizzr™️ was made with 🍕& 🍺. </span>
+        </div>
+    </footer>
+
+    <!-- JS HERE-->
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/particles-config.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/service-worker.js');
+        }
+    </script>
+</body>
+
+</html>
