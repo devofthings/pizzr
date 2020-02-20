@@ -1,6 +1,6 @@
 {
-    "short_name": "Pizzr",
-    "name": "Pizzr - Pizza Calculator",
+    "short_name": "pizzr",
+    "name": "pizzr - the pizza calculator 🍕",
     "icons": [
         {
             "src": "/assets/favicon/196.png",
