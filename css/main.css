@@ -40,7 +40,10 @@ canvas {
   margin-left: 5%;
   margin-top: 0;
   background-color: #000000;
-  border-top: #ffffff solid;
+  border-width: 2px 0 0 0;
+  border-style: solid;
+  border-image-source: linear-gradient(90deg,#28a745, #28a745 33%, #f8f9fa 33%, #f8f9fa 67%, #dc3545 67%, #dc3545 100%);
+  border-image-slice: 1;
 }
 
 .headline {
@@ -55,6 +58,11 @@ canvas {
   height: 80%;
   overflow-y:auto;
   overflow-x: hidden;
+}
+
+.animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
 }
 
 .manual {
@@ -114,14 +122,26 @@ canvas {
   border-bottom: 0;
 }
 
-.radio-buttons {
-  margin-left: 30%;
-  padding-bottom: 1%;
+.btn-group {
+  width: 100%;
 }
 
-.custom-control-label {
-  color: #ffffff;
-  padding-right: 50%;
+.btn-option{
+  width: 50%;
+}
+
+/* ROUND BUTTON */
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* SQUARE BUTTON */
+.btn-group>.btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .diameter {
@@ -137,9 +157,34 @@ canvas {
   width: 100%;
 }
 
-.animated {
-  animation-duration: 0.8s;
-  animation-fill-mode: both;
+.input-group>.input-group-prepend>.input-group-text {
+  border-radius: 0;
+}
+
+.input-group>.form-control:not(:first-child) {
+  border-radius: 0;
+}
+
+.diameter-custom-radius {
+  border-top-right-radius: 0;
+}
+
+.price-custom-radius {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.progress {
+  border-radius: 0;
+}
+
+.progress-bar {
+  background-color: #28a745;
+}
+
+.btn-add {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .footer {
@@ -154,6 +199,22 @@ canvas {
 
 /* NORMAL PHONES LIKE A iPHONE 6 / PIXEL 2 */
 @media only screen and (max-width: 600px) {
+
+  .form-control {
+    display: block;
+    width: 36.5%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: none;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 
   .vertical-align {
     display: flex;
@@ -202,7 +263,7 @@ canvas {
 /* REGULAR PHONES */
 @media only screen and (max-width: 360px) {
   .card-container {
-    height: 67%;
+    height: 65%;
   }
 
   .input-group-text {
@@ -213,13 +274,12 @@ canvas {
     font-size: small;
   }
 
-  .radio-buttons {
-    display: inline;
-    margin-left: 20%;
+  .diameter-div {
+    width: 48%;
   }
 
-  .diameter-div {
-    width: 50%;
+  .diameter {
+    margin-left: 3%;
   }
   
   .square {
@@ -239,4 +299,15 @@ canvas {
     margin-left: -9%;
   }
 
+  .diameter {
+    margin-left: 3.5%;
+  }
+
+  .length-a-label {
+    margin-left: 1px;
+  }
+
+  .length-b-input {
+    margin-right: 2px;
+  }
 }

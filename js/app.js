@@ -64,7 +64,7 @@ const addProgress = () => {
     if (total_percent_progress == 100){
         $('#btn_add').removeClass('disabled');
     }else if(total_percent_progress == 0){
-        progress.css("width", "10%");
+        progress.css("width", "12%");
     }
 }
 

@@ -43,18 +43,14 @@
             </div>
 
             <form class="form" id="add-form">
-                <div class="form-row radio-buttons">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="radio-round" name="customRadioInline1" class="custom-control-input"
-                                checked="true">
-                            <label class="custom-control-label" for="radio-round">Round</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="radio-square" name="customRadioInline1"
-                                class="custom-control-input">
-                            <label class="custom-control-label" for="radio-square">Square</label>
-                        </div>
-                </div>
+                    <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-light">
+                          <input class="btn-option" type="radio" name="customRadioInline1" id="radio-round" autocomplete="off" checked> Round
+                        </label>
+                        <label class="btn btn-light">
+                          <input class="btn-option" type="radio" name="customRadioInline1" id="radio-square" autocomplete="off"> Square
+                        </label>
+                      </div>
                 <div class="form-row form-input">
                     <div class="diameter-div" id="diameter-div">
                         
@@ -62,7 +58,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Ø</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="Diameter" aria-label="Diameter"
+                                <input type="number" class="form-control diameter-custom-radius" placeholder="Diameter" aria-label="Diameter"
                                     aria-describedby="basic-addon1" id="input-diameter">
                             </div>
                         
@@ -71,12 +67,12 @@
                     <div id="square-div" style="display:none">
                             <div class="input-group square">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">cm</span>
+                                    <span class="input-group-text length-a-label" id="basic-addon1">cm</span>
                                     <input type="number" class="form-control" placeholder="Length A"
                                         aria-label="Diameter" aria-describedby="basic-addon1" id="input-side-a">
 
                                     <span class="input-group-text" id="basic-addon1">cm</span>
-                                    <input type="number" class="form-control" placeholder="Length B"
+                                    <input type="number" class="form-control length-b-input" placeholder="Length B"
                                         aria-label="Diameter" aria-describedby="basic-addon1" id="input-side-b">
 
                                 </div>
@@ -86,7 +82,7 @@
                     <div class="col">
                         <div class="input-group price">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">€</span>
+                                <span class="input-group-text price-custom-radius" id="basic-addon1">€</span>
                             </div>
                             <input type="number" class="form-control" placeholder="Price" aria-label="Price"
                                 aria-describedby="basic-addon1" id="price-input">
@@ -95,7 +91,7 @@
                 </div>
             </form>
             <div class="progress">
-                <div class="progress-bar" id="progress" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
+                <div class="progress-bar" id="progress" role="progressbar" style="width: 12%;" aria-valuenow="25" aria-valuemin="0"
                     aria-valuemax="100">0%
                 </div>
             </div>
