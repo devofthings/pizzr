@@ -75,6 +75,8 @@ const getPurged = () => {
     $('#input-side-a').val(null)
     $('#input-side-b').val(null)
     $('#btn_add').addClass('disabled');
+    $('#progress').css("width", "12%");
+    $('#progress').html("0%")
 } 
 
 const highlight_best_value = () => {
